@@ -31,13 +31,13 @@ func InitializeSqlite() (*gorm.DB, error) {
 	// Create database and connect
 	db, err := gorm.Open(sqlite.Open(dbPath), &gorm.Config{})
 	if err!= nil {
-		logger.Errorf("sqlite opening error: %v", err)
+		logger.Errorf("sqlite opening error: %v", err.Error())
     return nil, err
   }
 	// Migrat the Schema
 	err = db.AutoMigrate(&schemas.Opening{})
 	if err!= nil {
-    logger.Errorf("sqlite automigration error: %v", err)
+    logger.Errorf("sqlite automigration error: %v", err.Error())
     return nil, err
   }
 
