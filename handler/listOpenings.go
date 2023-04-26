@@ -13,7 +13,6 @@ import (
 // @Tags Openings
 // @Produce  json
 // @Success 200 {object} OpeningsResponse
-// @Failure 400 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Router /openings [get]
 func ListOpeningsHandler(ctx *gin.Context) {
