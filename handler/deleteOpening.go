@@ -14,7 +14,7 @@ import (
 // @Tags Openings
 // @Accept  json
 // @Produce  json
-// @Param request body true "Opening identificaton"
+// @Param id query string true "Opening identificaton"
 // @Success 200 {object} OpeningResponse
 // @Failure 404 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
