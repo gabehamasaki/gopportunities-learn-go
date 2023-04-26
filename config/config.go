@@ -9,12 +9,13 @@ import (
 var (
 	db *gorm.DB
 	logger *Logger
+	Env *Enviroment
 )
 
 func Init() error {
 	var err error
 
-	err = InitializeEnvironmentVariables()
+	Env, err = InitializeEnvironmentVariables()
 	if err!= nil {
     return fmt.Errorf("error initializing dotenv: %v", err.Error())
   }

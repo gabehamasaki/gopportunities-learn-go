@@ -15,5 +15,5 @@ func Initialize() {
 	initializeRoutes(router)
 
 	// Start server
-	router.Run(fmt.Sprintf(":%s", config.PORT))
+	router.Run(fmt.Sprintf(":%s", config.Env.PORT))
 }

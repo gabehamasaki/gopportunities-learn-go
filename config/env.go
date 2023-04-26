@@ -2,16 +2,24 @@ package config
 
 import (
 	"os"
+
+	"github.com/joho/godotenv"
 )
 
-var (
+type Enviroment struct {
 	PORT string
-)
+}
 
-func InitializeEnvironmentVariables() error {
+func InitializeEnvironmentVariables() (*Enviroment, error) {
 	
+  if err := godotenv.Load(); err!= nil {
+		logger.Errorf("error ")
+    return nil, err
+  }
 	
-	PORT = os.Getenv("PORT")
+	env := new(Enviroment);
 
-	return nil
+	env.PORT = os.Getenv("PORT")
+
+	return env, nil
 }
