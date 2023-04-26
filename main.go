@@ -17,7 +17,7 @@ func main() {
 		logger.Errorf("config initialization error: %v",err.Error())
 		return
 	}
-
+	
 	// Initialize Router
 	router.Initialize()
 }

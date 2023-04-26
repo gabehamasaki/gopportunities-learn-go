@@ -1,6 +1,11 @@
 package router
 
-import "github.com/gin-gonic/gin"
+import (
+	"fmt"
+
+	"github.com/gabehamasaki/gopportunities-learn-go/config"
+	"github.com/gin-gonic/gin"
+)
 
 func Initialize() {
 	// Initialize the router
@@ -10,5 +15,5 @@ func Initialize() {
 	initializeRoutes(router)
 
 	// Start server
-	router.Run(":8080")
+	router.Run(fmt.Sprintf(":%s", config.PORT))
 }

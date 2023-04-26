@@ -14,6 +14,11 @@ var (
 func Init() error {
 	var err error
 
+	err = InitializeEnvironmentVariables()
+	if err!= nil {
+    return fmt.Errorf("error initializing dotenv: %v", err.Error())
+  }
+
 	// Initialize SQlite database
 	db, err = InitializeSqlite()
 	if err!= nil {
